@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Registration
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <form method="POST" class="form-register" style="color:black">
+            {{form.hidden_tag() }}
+            <br>
+            <h1 class="h3 mb-3 font-weight-normal">Enter in your details</h1>
+            <br>
+            {{ form.username.label() }}
+            {{ form.username(class="form-control",placeholder="username")}}
+            <br>
+            {{ form.emailadd.label() }}
+            {{ form.emailadd(class="form-control",placeholder="email address")}}
+            <br>
+            {{ form.phonenumber.label() }}
+            {{ form.phonenumber(class="form-control",placeholder="phone number")}}
+            <br>
+            {{ form.password1.label() }}
+            {{ form.password1(class="form-control",placeholder="password")}}
+            <br>
+            {{ form.password2.label() }}
+            {{ form.password2(class="form-control",placeholder="confirm password")}}
+            <br>    
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+                <br><br>
+
+            <div class="checkbox mb-3">
+                <h6>already have an account?</h6>
+                <a class="btn btn-sm btn-secondary" href="{{ url_for('login')}}">Login</a>
+            </div>
+        </form>
+    </div>
+    <style>
+    .logo
+    {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #fff;
+    }
+    @media screen and (min-width:777px){
+        .nav-link {
+          padding:18px 0;
+          min-width:120px;
+        }
+        .navbar {
+          padding: 0
+        }
+      }
+    .offer
+    {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .top-part{
+        position:sticky ;
+        top: 0; 
+    }
+    li{
+      list-style-type: none;
+    }
+    .nav-link{
+      color: #383838;
+      opacity: 0.5;
+      transition: 0.5s;
+      font-size: 150%;
+    } 
+    .nav-link:hover
+    {
+      opacity: 1;
+    }
+    </style>
+{% endblock %}
